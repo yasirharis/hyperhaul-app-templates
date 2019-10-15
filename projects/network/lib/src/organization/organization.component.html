@@ -1,0 +1,162 @@
+<mat-tab-group>
+  <mat-tab label="My Organization">
+    <mat-grid-list cols="4" rows="11" rowHeight="60px">
+      <mat-grid-tile colspan=3 rowspan=1>
+        <div class="toplocation">
+          <span class="left" style="margin-top:10px;">Locations : </span>
+          <button class="right textcontainerorg" mat-raised-button>Add Locations</button>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1 rowspan=3>
+        <img src="https://i.stack.imgur.com/WGR4z.png" />
+      </mat-grid-tile>
+      <mat-grid-tile colspan=3 rowspan=8>
+        <div style="width:90%;height:100%;">
+          <mat-list>
+            <mat-list-item *ngFor="let location of locationlist" style="height:100%;padding-left:0px;">
+              <div>
+                <img src="{{location.mapimage}}" style="height:120px;" />
+              </div>
+              <div class="textcontainerorg">
+                <div>{{location.placename}}</div>
+                <div>{{location.address}}</div>
+                <div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="textcontainerorg">
+                        Loading Bays
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-select value={{location.loadingbays}} class="textcontainerorg">
+                      <mat-option value="1">
+                        Loading Bay 1
+                      </mat-option>
+                      <mat-option value="2">
+                        Loading Bay 2
+                      </mat-option>
+                    </mat-select>
+                  </mat-expansion-panel>
+
+                </div>
+                <div>
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Working Hours
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-select value={{location.workinghours}}>
+                      <mat-option value="1">
+                        WorkingHours 1
+                      </mat-option>
+                      <mat-option value="2">
+                        WorkingHours 2
+                      </mat-option>
+                    </mat-select>
+                  </mat-expansion-panel>
+                </div>
+              </div>
+              <div style="width:30%;position:absolute;right:0px;top:0px;">
+                <button class="right textcontainerorg" mat-raised-button>Edit</button>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1 rowspan=6>
+        <img
+          src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" />
+      </mat-grid-tile>
+      <mat-grid-tile colspan=4 rowspan=1>
+        <mat-paginator [length]="4" [pageSize]="2">
+        </mat-paginator>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+  <mat-tab label="Customer">Customer</mat-tab>
+
+  <mat-tab label="Contacts">
+    <mat-grid-list cols="5" rows="11" rowHeight="60px" class="contactContainer">
+      <mat-grid-tile colspan=3 rowspan=11>
+        <div style="width:90%;height:100%;">
+          <h1>Connections</h1>
+          <mat-list>
+            <mat-list-item *ngFor="let company of registeredCompany" style="height:100%;padding-left:0px;">
+              <div>
+                <img src="{{company.logo}}" style="width:100%;" />
+              </div>
+              <div class="textcontainerorg">
+                <p>{{company.name}}</p>
+              </div>
+              <div class="textcontainerorg">
+                <p>{{company.type}}</p>
+              </div>
+              <div class="textcontainerorg">
+                <mat-select value={{company.matchcust}}>
+                  <mat-option value="1">
+                    Customer ABC
+                  </mat-option>
+                  <mat-option value="2">
+                    Customer XYZ
+                  </mat-option>
+                </mat-select>
+              </div>
+              <div>
+                <button class="right textcontainerorg" mat-raised-button>Remove</button>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+
+      </mat-grid-tile>
+      <mat-grid-tile colspan=2 rowspan=1>
+        <div class="toplocation">
+          <span class="left inputleft" style="margin-top:10px;"><input matInput placeholder="Secret Friend Code"
+              value="Secret Friend Code" class="inputleft"></span>
+          <button class="right textcontainerorg" mat-raised-button>Add Connection</button>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=2 rowspan=4>
+        <div style="width:90%;height:100%;">
+          <h4>Awaiting for Acceptance</h4>
+          <mat-list>
+            <mat-list-item *ngFor="let company of accCompany" style="height:100%;padding-left:0px;">
+              <div>
+                <img src="{{company.logo}}" style="width:100%;" />
+              </div>
+              <div class="textcontainerorg">
+                {{company.name}}
+              </div>
+              <div style="width:30%;">
+                <button class="right textcontainerorg" mat-raised-button>Remove</button>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=2 rowspan=4>
+        <div style="width:90%;height:100%;">
+          <h4>Invitation Received</h4>
+          <mat-list>
+            <mat-list-item *ngFor="let company of recCompany" style="height:100%;padding-left:0px;">
+              <div>
+                <img src="{{company.logo}}" style="width:100%;" />
+              </div>
+              <div class="textcontainerorg">
+                {{company.name}}
+              </div>
+              <div>
+                <button class="right textcontainerorg" mat-raised-button>Accept</button>
+              </div>
+              <div>
+                <button class="right textcontainerorg" mat-raised-button>Reject</button>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,7 @@
+{
+  "name": "@hyperhaul/network",
+  "version": "0.0.1",
+  "description": "network module",
+  "main": "index.ts"
+  
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@hyperhaul/shared",
+  "version": "0.0.1",
+ "description": "shared module",
+  "main": "index.ts"
+}

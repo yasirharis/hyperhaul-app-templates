@@ -1,0 +1,53 @@
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.toplocation {
+  width: 90%;
+  border-bottom: 1px black solid;
+  padding-bottom: 10px;
+}
+
+.mat-list-item-content {
+  padding-left: 0px !important;
+}
+
+.textcontainerorg {
+  width: 40%;
+  height: 100%;
+  padding-left: 10px;
+}
+
+.contactContainer {
+  font-size: smaller;
+}
+
+@media only screen and (max-width: 915px) {
+  .inputleft {
+    width: 15vw;
+  }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+  .textcontainerorg {
+    font-size: 16px;
+  }
+
+  .mat-list-item-content {
+    font-size: x-small;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .textcontainerorg {
+    font-size: 16px;
+  }
+
+}

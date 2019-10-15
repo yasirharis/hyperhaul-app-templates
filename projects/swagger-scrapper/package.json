@@ -1,0 +1,14 @@
+{
+  "name": "@hyperhaul/swagger-scrapper",
+  "version": "0.0.1",
+  "description": "swagger openapi to custom typescript code",
+  "main": "index.js",
+  "scripts": {
+    "generate": "json2api api.json lib/scrapper.ts"   
+  },
+  "author": "yasir.haris@gmail.com",
+  "license": "none",
+  "dependencies": {
+    "rxjs": "^6.5.2"
+  }
+}
